@@ -1,0 +1,6 @@
+{
+  "captures":[
+    {"id":"LOAD-DEMO-1","leg":"DEMO-LEG","limit":10,"combined":[2,8,6]},
+    {"id":"LOAD-DEMO-2","leg":"DEMO-LEG","limit":10,"combined":[2,12,6]}
+  ]
+}

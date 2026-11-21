@@ -1,0 +1,26 @@
+{
+  "contracts": [
+    {
+      "id": "CONTRACT-B",
+      "product": "P-B",
+      "version": 1,
+      "start": 2000,
+      "end": 2999,
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "signed_by": "factory"
+    }
+  ],
+  "allocations": [
+    {
+      "id": "ALLOC-B",
+      "batch": "BATCH-B",
+      "contract_id": "CONTRACT-B",
+      "product": "P-B",
+      "version": 1,
+      "start": 2000,
+      "end": 2099,
+      "at": "2026-02-01"
+    }
+  ]
+}

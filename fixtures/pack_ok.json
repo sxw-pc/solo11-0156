@@ -1,0 +1,29 @@
+{
+  "boxes": [
+    {
+      "id": "BOX-1",
+      "batch": "BATCH-1",
+      "capacity": 1,
+      "seal": "SEAL-1",
+      "state": "sealed"
+    }
+  ],
+  "members": [
+    {
+      "id": "MEMBER-1",
+      "box_id": "BOX-1",
+      "unit_id": "UNIT-1",
+      "joined_at": "2026-02-03",
+      "active": true
+    }
+  ],
+  "pallets": [
+    {
+      "id": "PALLET-1",
+      "batch": "BATCH-1",
+      "box_ids": [
+        "BOX-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "contracts": [
+    {
+      "id": "CONTRACT-1",
+      "product": "P-1",
+      "version": 1,
+      "start": 1000,
+      "end": 1999,
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-12-31",
+      "signed_by": "brand_owner"
+    }
+  ],
+  "allocations": [
+    {
+      "id": "ALLOC-1",
+      "batch": "BATCH-1",
+      "contract_id": "CONTRACT-1",
+      "product": "P-1",
+      "version": 1,
+      "start": 1000,
+      "end": 1099,
+      "at": "2026-02-01"
+    }
+  ]
+}

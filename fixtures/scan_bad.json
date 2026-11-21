@@ -1,0 +1,31 @@
+{
+  "devices": [
+    {
+      "id": "DEVICE-B",
+      "device": "S-B",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-01-31",
+      "operator": "inspector"
+    }
+  ],
+  "units": [
+    {
+      "id": "UNIT-B",
+      "batch": "BATCH-1",
+      "product": "P-1",
+      "code": 1002,
+      "printed_at": "2026-02-02"
+    }
+  ],
+  "scans": [
+    {
+      "id": "SCAN-B",
+      "unit_id": "UNIT-B",
+      "code": 1002,
+      "vision_code": 1003,
+      "device_id": "DEVICE-B",
+      "at": "2026-02-02",
+      "result": "pass"
+    }
+  ]
+}
