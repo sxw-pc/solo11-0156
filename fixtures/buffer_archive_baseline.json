@@ -1,0 +1,6 @@
+{
+  "dumps":[
+    {"id":"BUFFER-DEMO-1","window_id":"DEMO","slots":4,"entries":["a","b","c","d"]},
+    {"id":"BUFFER-DEMO-2","window_id":"DEMO","slots":4,"entries":["a","b","c"]}
+  ]
+}

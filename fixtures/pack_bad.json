@@ -1,0 +1,31 @@
+{
+  "boxes": [
+    {
+      "id": "BOX-B",
+      "batch": "BATCH-1",
+      "capacity": 1,
+      "seal": "SEAL-B",
+      "old_seal": "SEAL-OLD",
+      "old_seal_void": false,
+      "state": "sealed"
+    }
+  ],
+  "members": [
+    {
+      "id": "MEMBER-B",
+      "box_id": "BOX-B",
+      "unit_id": "UNIT-B",
+      "joined_at": "2026-02-03",
+      "active": true
+    }
+  ],
+  "pallets": [
+    {
+      "id": "PALLET-B",
+      "batch": "BATCH-1",
+      "box_ids": [
+        "BOX-B"
+      ]
+    }
+  ]
+}
