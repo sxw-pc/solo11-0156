@@ -2,11 +2,12 @@ import argparse,json
 from pathlib import Path
 from .store import connect
 from .source import read,file_record
-from . import codes,units,pack,report,impact_capture
-HANDLERS={'code-import':codes.import_data,'scan-import':units.import_data,'pack-import':pack.import_data,'impact-import':impact_capture.import_data}
+from . import codes,units,pack,report,impact_capture,impact_witness
+HANDLERS={'code-import':codes.import_data,'scan-import':units.import_data,'pack-import':pack.import_data,'impact-import':impact_capture.import_data,'witness-import':impact_witness.import_data}
 def main():
-    p=argparse.ArgumentParser();p.add_argument('command',choices=[*HANDLERS,'demo','report','audit','impact-report']);p.add_argument('--db',default='state.sqlite');p.add_argument('--input');a=p.parse_args();db=connect(a.db)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=[*HANDLERS,'demo','report','audit','impact-report','witness-report']);p.add_argument('--db',default='state.sqlite');p.add_argument('--input');a=p.parse_args();db=connect(a.db)
     if a.command=='impact-report':print(json.dumps(impact_capture.snapshot(db),ensure_ascii=False,indent=2));return
+    if a.command=='witness-report':print(json.dumps(impact_witness.snapshot(db),ensure_ascii=False,indent=2));return
     if a.command=='report':print(json.dumps(report.build(db),ensure_ascii=False,indent=2));return
     if a.command=='audit':print(json.dumps(report.audit(db),ensure_ascii=False,indent=2));return
     if a.command=='demo':

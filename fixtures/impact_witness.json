@@ -1,0 +1,94 @@
+{
+  "cases": [
+    {
+      "id": "TRANSPORT-X-SYNC",
+      "limit": 10,
+      "legs": [{"id": "TRANSPORT-X", "start_tick": 0, "end_tick": 2}],
+      "runs": [
+        {"id": "U-R1", "device": "U", "round": "R1", "offset": 0,
+         "samples": [{"tick": 0, "value": 0}, {"tick": 1, "value": 6}, {"tick": 2, "value": 0}]},
+        {"id": "V-R1", "device": "V", "round": "R1", "allowed_offsets": [0, 1],
+         "samples": [{"tick": -1, "value": 0}, {"tick": 0, "value": 6},
+                     {"tick": 1, "value": 0}, {"tick": 2, "value": 0}]}
+      ],
+      "syncs": [
+        {"id": "SYNC-X", "a_run": "U-R1", "b_run": "V-R1",
+         "a_tick": 1, "b_tick": 0, "offset": 1, "tick": 1}
+      ]
+    },
+    {
+      "id": "TRANSPORT-X-STRIP",
+      "limit": 10,
+      "legs": [{"id": "TRANSPORT-X", "start_tick": 0, "end_tick": 2}],
+      "runs": [],
+      "strips": [
+        {"id": "STRIP-X", "leg": "TRANSPORT-X", "placement_tick": 0,
+         "recovery_tick": 2, "placed_state": "intact", "recovered_state": "flipped",
+         "placement_complete": true, "recovery_complete": true,
+         "leg_start_ok": true, "leg_end_ok": true, "round": "R1"}
+      ]
+    },
+    {
+      "id": "TRANSPORT-X-STRIP-PREFLIPPED",
+      "limit": 10,
+      "legs": [{"id": "TRANSPORT-X", "start_tick": 0, "end_tick": 2}],
+      "runs": [],
+      "strips": [
+        {"id": "STRIP-X-PRE", "leg": "TRANSPORT-X", "placement_tick": 0,
+         "recovery_tick": 2, "placed_state": "flipped", "recovered_state": "flipped",
+         "placement_complete": true, "recovery_complete": true,
+         "leg_start_ok": true, "leg_end_ok": true, "round": "R1"}
+      ]
+    },
+    {
+      "id": "TRANSPORT-X-STRIP-SWAPPED",
+      "limit": 10,
+      "legs": [{"id": "TRANSPORT-X", "start_tick": 0, "end_tick": 2}],
+      "runs": [],
+      "strips": [
+        {"id": "STRIP-X-SWAP", "leg": "TRANSPORT-X", "placement_tick": 0,
+         "recovery_tick": 2, "placed_state": "intact", "recovered_state": "flipped",
+         "placement_complete": true, "recovery_complete": true,
+         "replacement": true, "replacement_complete": false,
+         "leg_start_ok": true, "leg_end_ok": true, "round": "R1"}
+      ]
+    },
+    {
+      "id": "TRANSPORT-X-REBOOT-CONFLICT",
+      "limit": 10,
+      "legs": [
+        {"id": "LEG-A", "start_tick": 0, "end_tick": 1},
+        {"id": "LEG-B", "start_tick": 2, "end_tick": 3}
+      ],
+      "runs": [
+        {"id": "U-R1", "device": "U", "round": "R1", "offset": 0,
+         "samples": [{"tick": 1, "value": 6}, {"tick": 3, "value": 6}]},
+        {"id": "V-R1", "device": "V", "round": "R1", "allowed_offsets": [0, 2],
+         "samples": [{"tick": 1, "value": 6}]}
+      ],
+      "syncs": []
+    },
+    {
+      "id": "TRANSPORT-X-RECEIPT",
+      "limit": 10,
+      "legs": [
+        {"id": "TRANSPORT-X", "start_tick": 0, "end_tick": 1},
+        {"id": "TRANSPORT-Y", "start_tick": 2, "end_tick": 3}
+      ],
+      "runs": [
+        {"id": "U-R1", "device": "U", "round": "R1", "offset": 0,
+         "samples": [{"tick": 2, "value": 6}, {"tick": 3, "value": 0}]},
+        {"id": "V-R1", "device": "V", "round": "R1", "offset": 0,
+         "samples": [{"tick": 2, "value": 6}, {"tick": 3, "value": 0}]}
+      ],
+      "syncs": [
+        {"id": "SYNC-Y", "a_run": "U-R1", "b_run": "V-R1",
+         "a_tick": 2, "b_tick": 2, "tick": 2}
+      ],
+      "receipts": [
+        {"id": "RECEIPT-Y", "tick": 2, "sampling": "continuous",
+         "claims_overload": "overload"}
+      ]
+    }
+  ]
+}
